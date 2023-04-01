@@ -63,5 +63,21 @@ module.exports = {
       util: false,
       fs: false,
     },
-  }
+  },
+  plugins: [
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          context: "./AI_MODELS/",
+          from: "**/*.bin",
+          to: "./",
+          force: true,
+        },
+      ],
+    }),
+    new HtmlWebpackPlugin({
+      filename: "index.html",
+      template: "src/index.html",
+    }),
+  ],
 };

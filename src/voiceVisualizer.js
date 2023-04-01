@@ -1,5 +1,4 @@
 import Wave from "wave-visualizer";
-// const Wave = require("wave-visualizer");
 
 export default class VoiceVisualizer {
   constructor() {
@@ -25,7 +24,7 @@ export default class VoiceVisualizer {
 
     // giving the audio to wave to generate wave in a canvas with id="output"
     await wave.fromStream(this.audioStream, "output", {
-      colors: ["red", "white", "blue"],
+      colors: ["red", "blue"],
     });
   }
 
