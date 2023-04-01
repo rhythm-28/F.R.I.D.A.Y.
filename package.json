@@ -27,6 +27,7 @@
     "@tensorflow-models/speech-commands": "^0.5.4",
     "@tensorflow/tfjs": "^4.2.0",
     "copy-webpack-plugin": "^11.0.0",
+    "dotenv": "^16.0.3",
     "html-webpack-plugin": "^5.5.0",
     "wave-visualizer": "^1.0.6",
     "webpack-cli": "^5.0.1",
