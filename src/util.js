@@ -4,9 +4,9 @@ export const wait = (s) => {
 
 export const weather = async () => {
   const weatherResponse = await fetch(
-    "https://api.openweathermap.org/data/2.5/weather?q=London&appid=d237d9b72241f06b355320b7285cbea9"
-  ).catch((err)=>{
-      console.error(err);
+    `https://api.openweathermap.org/data/2.5/weather?q=London&appid=${process.env.API_KEY}`
+  ).catch((err) => {
+    console.error(err);
   });
 
   const weather = await weatherResponse.json();

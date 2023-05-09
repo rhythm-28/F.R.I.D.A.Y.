@@ -10,10 +10,10 @@ export default class VoiceAssistant {
   constructor() {
     this.recognizer = null;
     this.options = {
-      overlapFactor: 0.5,
-      includeSpectrogram: true,
-      probabilityThreshold: 0.21,
-      invokeCallbackOnNoiseAndUnknown: false,
+      includeSpectogram: true,
+      overlapFactor: 0.25,
+      invokeCallbackOnNoiseAndUnkown: false,
+      probabilityThershold: 1,
     };
     this.processingWord = null;
   }
@@ -37,6 +37,7 @@ export default class VoiceAssistant {
     this.recognizer.listen((result) => {
       const scores = result.scores;
       const largest = Math.max(...scores);
+      console.log(scores);
       const idx = scores.findIndex((val) => {
         return val === largest;
       });
@@ -62,12 +63,12 @@ export default class VoiceAssistant {
     console.log(this.processingWord);
     switch (this.processingWord) {
       case "Hello":
-        this.saySpeech("Good, how about you");
+        this.saySpeech("Hey, how are you");
         await wait(3000);
         break;
-      case "Sing me a song":
+      case "Sing me  song":
         this.saySpeech(
-          "First things first. I'ma say all the words inside my head."
+          "Singing a song"
         );
         await wait(3000);
         break;

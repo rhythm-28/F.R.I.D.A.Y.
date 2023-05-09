@@ -2,6 +2,7 @@ const webpack = require("webpack");
 const path = require("path");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const Dotenv = require("dotenv-webpack");
 
 module.exports = {
   // used to serve src/index.html on a specified port
@@ -65,6 +66,7 @@ module.exports = {
     },
   },
   plugins: [
+    new Dotenv(),
     new CopyWebpackPlugin({
       patterns: [
         {
